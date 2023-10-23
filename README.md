@@ -16,8 +16,14 @@
 
 - Visit the generated URL. Ex.: `http://localhost:/a`
 
+Sidekiq performs a background job and adds the `page_title` field.
+
 ### How is it generated?
 
 - If there isn't an URL present in the database, we start the sequence with `'a'`.
 - If there is an URL, then we continue the previous sequence with 'succ'. Ex.: `'a', 'b', ..., 'z'`.
 - The sequence is stored in the `token` field.
+
+### Get TOP 100 Urls
+
+GET `/urls/show_top_100`
